@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e21e458e1c56a448a414f87b4ccc94, type: 3}
-  m_Name: TL1_ThrowStar
+  m_Name: TL1-07_ColorConnections
   m_EditorClassIdentifier: 
   dialogueInfo:
-  - dialouge: "If a button is out of reach, throw your star at it to activate it!\r"
-  - dialouge: "Throw star\r\nKeyboard and mouse: Hold down left mouse button and
-      drag to aim. Release to throw the star!\r"
-  - dialouge: 'Throw star
+  - dialouge: 'Objects of the same color are connected.
 
-      Controller: Aim with Right Joystick. Press and
-      release R2 to throw the star!'
+      For example, pressing
+      an orange button will affect orange spikes!
+
+'
+  - dialouge: 'Tip: Use the light around your star to find out the color of different
+      objects!'

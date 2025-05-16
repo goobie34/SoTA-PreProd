@@ -10,22 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e21e458e1c56a448a414f87b4ccc94, type: 3}
-  m_Name: TL1_Boulder
+  m_Name: TL1-05_ThrowStar_Keyboard
   m_EditorClassIdentifier: 
   dialogueInfo:
-  - dialouge: 'This is a boulder. Try pushing it onto the pressure plate. It''s heavy,
-      but you can do it!
-
-'
-  - dialouge: 'Push boulder
-
-      Keyboard: Press E to grab onto the boulder. Press
-      E again to release.
-
-'
-  - dialouge: 'Push boulder
-
-      Controller Press A to grab onto the boulder.
-      Press A again to release.
-
-'
+  - dialouge: "If a button is out of reach, throw your star at it to activate it!\r"
+  - dialouge: "Throw star\r\nHold down left mouse button and drag to aim. Release
+      to throw the star!\r"

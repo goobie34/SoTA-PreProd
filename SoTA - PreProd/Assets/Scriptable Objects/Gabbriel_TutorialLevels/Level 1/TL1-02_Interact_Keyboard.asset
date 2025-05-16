@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e21e458e1c56a448a414f87b4ccc94, type: 3}
-  m_Name: TL1_PressurePlate
+  m_Name: TL1-02_Interact_Keyboard
   m_EditorClassIdentifier: 
   dialogueInfo:
-  - dialouge: "You see that glowing orb over your head? That is a star! Drop it on
-      this pressure plate to activate it!\r"
-  - dialouge: 'Drop star
+  - dialouge: 'Interact with objects
 
-      Keyboard: Press Space
+      Press E'
+  - dialouge: 'Try pressing that button over there!
 
-      Controller: Press Y'
+'

@@ -1,15 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Author: Sixten
-/// Ignore all the stupid comments or names :p
-/// The bootstrapper just initalizes components (UI in our case lol) that we want to bring around in the whole game
-/// Not used as extensively as I would've wanted, but it was implemented a bit late in development
-/// </summary>
 public class Bootstrap : MonoBehaviour
 {
-
     public GameObject[] persistentPrefabs; 
     public string firstSceneName = "MainMenu";
 

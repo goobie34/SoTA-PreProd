@@ -2,24 +2,16 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-/// <summary>
-/// Author: Sixten
-/// Ignore all the stupid comments or names :p
-/// </summary>
-
 public class GraphicsMenu : MonoBehaviour
 {
-    //IIRC this whole source file is from the tutorial but with minor (if any) changes
-    // Written by myself though
-
     [SerializeField] private TMP_Dropdown resolutionDropDown;
 
-    void Start() 
+    void Start()
     {
         PopulateResDropDown();
     }
 
-    public void ToggleFullScreen() 
+    public void ToggleFullScreen()
     {
         Screen.fullScreen = !Screen.fullScreen;
     }
@@ -29,7 +21,7 @@ public class GraphicsMenu : MonoBehaviour
         Screen.SetResolution(Screen.resolutions[resIndex].width, Screen.resolutions[resIndex].height, Screen.fullScreen);
     }
 
-    public void PopulateResDropDown() // unity UI bs. Why don't they just have a completed component for this smh...
+    public void PopulateResDropDown()
     {
         int currentResIndex = 0;
         List<string> options = new List<string>();

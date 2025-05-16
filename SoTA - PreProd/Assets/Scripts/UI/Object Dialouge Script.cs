@@ -1,19 +1,34 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
-
-/// <summary>
-/// Author: Sixten
-/// Ignore all the stupid comments or names :p
-/// </summary>
 
 public class ObjectDialougeScript : MonoBehaviour, IInteractable
 {
-    //IIRC this whole source file is from the tutorial but with minor (if any) changes
-    // Written by myself though
-
+    [field: Header("Default convo (assumes player using keyboard)")]
     [SerializeField] SO_Dialogue convo;
+
+    [field: Header("Controller specific convo")]
+    [SerializeField] bool dependsOnInputMethod;
+    [SerializeField] SO_Dialogue convoController; //this convo is only used if dependsOnInputMethod == true
 
     public void Interact()
     {
-        DialogueManager.Instance.Queue(convo);
+        //if convo has no controller specific content
+        if (!dependsOnInputMethod)
+        {
+            DialogueManager.Instance.Queue(convo);
+            return;
+        }
+
+        //if we get here, convo has controller specific content
+        if (UIScript.IsUsingController)
+        {
+            //we are using controller
+            DialogueManager.Instance.Queue(convoController);
+        }
+        else
+        {
+            //we are using keyboard
+            DialogueManager.Instance.Queue(convo);
+        }
     }
 }

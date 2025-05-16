@@ -10,12 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e21e458e1c56a448a414f87b4ccc94, type: 3}
-  m_Name: TL1_Welcome
+  m_Name: TL1-08_TimerButton
   m_EditorClassIdentifier: 
   dialogueInfo:
-  - dialouge: 'Welcome to the Abyss!
-
-'
-  - dialouge: 'Move around with WASD or Left Joystick.
-
-'
+  - dialouge: Some buttons are on a timer.
+  - dialouge: When the clock starts ticking, hurry up!

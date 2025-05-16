@@ -19,9 +19,6 @@ TagManager:
   - StarPickupTrigger
   - LoreTile
   - BrokenElement
-  - UI
-  - DialogueBox
-  - DialogueText
   layers:
   - Default
   - TransparentFX

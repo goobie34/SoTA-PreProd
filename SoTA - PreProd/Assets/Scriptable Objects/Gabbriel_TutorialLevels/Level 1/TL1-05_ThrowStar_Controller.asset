@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e21e458e1c56a448a414f87b4ccc94, type: 3}
-  m_Name: TL1_End
+  m_Name: TL1-05_ThrowStar_Controller
   m_EditorClassIdentifier: 
   dialogueInfo:
-  - dialouge: You made it to the end of the level!
-  - dialouge: You should check out that circular mark on the floor...
+  - dialouge: "If a button is out of reach, throw your star at it to activate it!\r"
+  - dialouge: 'Throw star
+
+      Aim with Right Joystick. Press and release R2 to
+      throw the star!'

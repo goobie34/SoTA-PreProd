@@ -19,12 +19,12 @@ public class AudioManager : MonoBehaviour
     private Bus musicBus;
     private Bus sfxBus;
 
-
     private List<EventInstance> eventInstances;
 
     public static AudioManager Instance { get; private set; }
 
     public static EventInstance ambienceEventInstance;
+    EventInstance backgroundMusic;
 
     [SerializeField] bool disableBgMusic = false;
     [SerializeField] bool disableAmbience = false;
@@ -103,13 +103,29 @@ public class AudioManager : MonoBehaviour
         CleanUp();
     }
 
-
-
-
-    EventInstance backgroundMusic;
     private void StartBgMusic()
     {
         backgroundMusic = Instance.CreateInstance(FMODEvents.Instance.BackgroundMusic);
         backgroundMusic.start();
+    }
+
+    public void SetBgMusicState(bool shouldPlay)
+    { 
+        PLAYBACK_STATE playbackState;
+        backgroundMusic.getPlaybackState(out playbackState);
+
+        if (shouldPlay)
+        {
+            if (playbackState == PLAYBACK_STATE.STOPPED || playbackState == PLAYBACK_STATE.STOPPING)
+            {
+                backgroundMusic.start();
+            }
+        } else
+        {
+            if (playbackState == PLAYBACK_STATE.PLAYING)
+            {
+                backgroundMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            }
+        }
     }
 }

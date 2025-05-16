@@ -10,10 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18e21e458e1c56a448a414f87b4ccc94, type: 3}
-  m_Name: TL1_RecallStar
+  m_Name: TL1-06_Boulder_Controller
   m_EditorClassIdentifier: 
   dialogueInfo:
-  - dialouge: "Recall the star to you\r\nKeyboard: Press Space bar\r\nController:
-      Press Y\r"
-  - dialouge: "If you leave the star behind...\r"
-  - dialouge: "You will die!\r"
+  - dialouge: 'This is a boulder. Try pushing it onto the pressure plate. It''s heavy,
+      but you can do it!
+
+'
+  - dialouge: 'Push boulder
+
+      Press A to grab onto the boulder. Press A again
+      to release.
+
+'
+  - dialouge: 'Tip: The arrows on top of the boulder indicate which direction it
+      can be moved!'

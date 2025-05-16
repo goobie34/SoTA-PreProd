@@ -1,15 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-
-/// <summary>
-/// Author: Sixten
-/// Ignore all the stupid comments or names :p
-/// </summary>
 
 public class InteractText : MonoBehaviour
 {
-    //IIRC this whole source file is from the tutorial but with minor (if any) changes
-    // Written by myself though
-
     [SerializeField] private float hideDelay = 2f;
     [SerializeField] private GameObject interactObjectText;
 
@@ -19,17 +13,11 @@ public class InteractText : MonoBehaviour
 
     public void Start()
     {
-        // Love unity's way of fetching components, true art
         playerInteractionRange = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInteract>().InteractionRange;
     }
 
     private Collider InsideInteractRange()
     {
-        // If we find the player in the range (which our object has) we return the player collider.
-        
-        // Might been a bit more effective to have the player only check for interaction and check if it was the "lore tile" but this system allows
-        // us to just drag & drop the script and you have interaction text :)
-
         Collider[] hitColliders = Physics.OverlapSphere(transform.position, playerInteractionRange);
 
         foreach (Collider collider in hitColliders)
@@ -41,7 +29,7 @@ public class InteractText : MonoBehaviour
         return null;
     }
 
-    public void FixedUpdate() 
+    public void FixedUpdate()
     {
         Collider player = InsideInteractRange();
 
