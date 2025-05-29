@@ -76,7 +76,7 @@ public class BoulderPlayerPushScript : MonoBehaviour
 
                     if (hit.collider.gameObject.GetComponentInParent<BoulderController>() != BoulderController.GetCurrentlyActiveBoulder())
                     {
-                        Debug.Log("RAYCAST HIT SOMETHING WITH TAG: " + hit.collider.gameObject.tag);
+                        //Debug.Log("RAYCAST HIT SOMETHING WITH TAG: " + hit.collider.gameObject.tag);
                         return false;
                     }
                     else
@@ -89,7 +89,7 @@ public class BoulderPlayerPushScript : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<BoulderController>() != BoulderController.GetCurrentlyActiveBoulder())
                     {
-                        Debug.Log("RAYCAST HIT SOMETHING WITH TAG: " + hit.collider.gameObject.tag);
+                        //Debug.Log("RAYCAST HIT SOMETHING WITH TAG: " + hit.collider.gameObject.tag);
                         return false;
                     }
                     else
@@ -97,7 +97,7 @@ public class BoulderPlayerPushScript : MonoBehaviour
                         continue;
                     }
                 }
-                Debug.Log("RAYCAST HIT SOMETHING WITH TAG: " + hit.collider.gameObject.tag);
+                //Debug.Log("RAYCAST HIT SOMETHING WITH TAG: " + hit.collider.gameObject.tag);
 
 
                 return false;
