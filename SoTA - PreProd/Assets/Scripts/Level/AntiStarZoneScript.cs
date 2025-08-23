@@ -46,6 +46,10 @@ public class AntiStarZoneScript : MonoBehaviour, IActivatable
             }
             if (starActions.TravelCoroutine != null)
             {
+                if (starActions.IsTraveling) //making an extra check here to ensure sfx doesn't play repeated times
+                {
+                    AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarHitAntiStarZoneSFX, Vector3.zero);
+                }
                 starActions.StopTravelToDestination(true);
             }
 

@@ -269,28 +269,16 @@ public class
             isFallingAndHasNotLanded = false;
         }
         
-        if (!isOnPlayer && IsTraveling && collision.gameObject.CompareTag("Boulder"))
-        {
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarHitBoulderSFX, Vector3.zero);
-            Debug.Log("Star hit: Boulder");
-        }
-
-        if (!isOnPlayer && IsTraveling && collision.gameObject.CompareTag("AntiStarZone"))
-        {
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarHitAntiStarZoneSFX, Vector3.zero);
-            Debug.Log("Star hit: AntiStarZone");
-        }
-        
         if (!isOnPlayer && IsTraveling && collision.gameObject.CompareTag("Wall"))
         {
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarHitWallSFX, Vector3.zero);
-            Debug.Log("Star hit: Wall");
         }
 
         if (isTraveling)
         {
             StopTravelToDestination(true);
             starThrowSFX.setParameterByNameWithLabel("StarThrowState", "Colliding_Regular");
+            //Debug.Log("STAR HIT SOMETHING WITH TAG: " + collision.gameObject.tag);
         }
     }
 }

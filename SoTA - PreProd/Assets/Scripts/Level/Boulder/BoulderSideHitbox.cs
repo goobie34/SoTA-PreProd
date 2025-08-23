@@ -26,6 +26,7 @@ public class BoulderSideHitbox : MonoBehaviour
             else if(starActions.IsTraveling)
             {
                 starActions.StopTravelToDestination(true);
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarHitBoulderSFX, Vector3.zero);
                 WasHitByStar = true;
                 this.GetComponentInParent<BoulderStarPushScript>().CheckSideHitboxes();
             }
