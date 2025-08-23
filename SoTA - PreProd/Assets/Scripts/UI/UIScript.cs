@@ -44,7 +44,7 @@ public class UIScript : MonoBehaviour
 
     private bool inStartScene = false;
     private bool inEndScene = false;
-    private static bool isUsingController = true;
+    private static bool isUsingController = false;
     public static bool IsUsingController { get { return isUsingController; } }
 
     // ENGINE METHODS ====================================== // 
