@@ -16649,11 +16649,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9205415575917240050, guid: ac217389566a5b740adafca9f4e04c99,
-        type: 3}
-      propertyPath: backgroundMusicIndex
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

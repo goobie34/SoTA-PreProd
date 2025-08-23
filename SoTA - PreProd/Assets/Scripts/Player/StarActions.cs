@@ -215,6 +215,9 @@ public class
         {
             if (!isOnPlayer) //if isOnPlayer is true, then player will also collide with abyss, which leads to death --> load save state
             {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarLandAbyssSFX, Vector3.zero);
+                Debug.Log("Star landed in: Abyss");
+
                 Recall();
             }
         }
@@ -264,6 +267,24 @@ public class
         {
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarLandFloorSFX, Vector3.zero);
             isFallingAndHasNotLanded = false;
+        }
+        
+        if (!isOnPlayer && IsTraveling && collision.gameObject.CompareTag("Boulder"))
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarHitBoulderSFX, Vector3.zero);
+            Debug.Log("Star hit: Boulder");
+        }
+
+        if (!isOnPlayer && IsTraveling && collision.gameObject.CompareTag("AntiStarZone"))
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarHitAntiStarZoneSFX, Vector3.zero);
+            Debug.Log("Star hit: AntiStarZone");
+        }
+        
+        if (!isOnPlayer && IsTraveling && collision.gameObject.CompareTag("Wall"))
+        {
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarHitWallSFX, Vector3.zero);
+            Debug.Log("Star hit: Wall");
         }
 
         if (isTraveling)

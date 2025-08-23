@@ -48,9 +48,10 @@ MonoBehaviour:
   masterVolume: 1
   musicVolume: 1
   SFXVolume: 1
-  backgroundMusicIndex: 0
+  backgroundMusicIndex: 1
   disableBgMusic: 0
   disableAmbience: 0
+  disableDeepAmbience: 0
 --- !u!1 &5652984145735463639
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,6 +237,34 @@ MonoBehaviour:
       Data4: 963992136
     Path: event:/SFX/Star/Star Throw/StrongThrowAttack
   <StarLandFloorSFX>k__BackingField:
+    Guid:
+      Data1: -627151226
+      Data2: 1130779902
+      Data3: 1900929153
+      Data4: 1337258590
+    Path: event:/SFX/Star/Star Throw/StarLand
+  <StarLandAbyssSFX>k__BackingField:
+    Guid:
+      Data1: -627151226
+      Data2: 1130779902
+      Data3: 1900929153
+      Data4: 1337258590
+    Path: event:/SFX/Star/Star Throw/StarLand
+  <StarHitWallSFX>k__BackingField:
+    Guid:
+      Data1: -627151226
+      Data2: 1130779902
+      Data3: 1900929153
+      Data4: 1337258590
+    Path: event:/SFX/Star/Star Throw/StarLand
+  <StarHitBoulderSFX>k__BackingField:
+    Guid:
+      Data1: -627151226
+      Data2: 1130779902
+      Data3: 1900929153
+      Data4: 1337258590
+    Path: event:/SFX/Star/Star Throw/StarLand
+  <StarHitAntiStarZoneSFX>k__BackingField:
     Guid:
       Data1: -627151226
       Data2: 1130779902
