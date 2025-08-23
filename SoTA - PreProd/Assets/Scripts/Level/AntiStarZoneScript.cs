@@ -17,6 +17,8 @@ public class AntiStarZoneScript : MonoBehaviour, IActivatable
     [SerializeField] int EjectStarZ;
     bool playerInZone = false;
 
+    public bool StartsAsActive { get; private set; }
+
     void Start()
     {
         // Fetch the star in the scene
@@ -28,6 +30,7 @@ public class AntiStarZoneScript : MonoBehaviour, IActivatable
         color = parentMeshRenderer.materials[4].color;
         particleSystemRenderer.material.color = color;
 
+        StartsAsActive = isActiveAndEnabled;
     }
 
     void OnTriggerEnter(Collider other)

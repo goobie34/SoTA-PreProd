@@ -29,6 +29,12 @@ public class ButtonScript : MonoBehaviour, IInteractable
     private bool spikesStartAsActive = false; //is set automatically in CheckConnectedPuzzleElements
     private bool isConnectedToLamps = false; //is set automatically in CheckConnectedPuzzleElements
     private bool lampsStartAsActive = false; //is set automatically in CheckConnectedPuzzleElements
+    private bool isConnectedToAntiStarZones = false; //is set automatically in CheckConnectedPuzzleElements
+    private bool antiStarZonesStartAsActive = false; //is set automatically in CheckConnectedPuzzleElements
+
+    private bool isConnectedToWalls = false; //is set automatically in CheckConnectedPuzzleElement
+    EventInstance wallMoveSFXInstance;
+
 
     public bool IsActive { get { return isPushed; } }
 
@@ -301,6 +307,41 @@ public class ButtonScript : MonoBehaviour, IInteractable
                 break; //for the purposes of SFX we only care about the first lamp, so we break the loop here
             }
         }
+
+        //LAMPS
+        isConnectedToAntiStarZones = false;
+
+        foreach (GameObject element in puzzleElements)
+        {
+            if (element.gameObject.CompareTag("AntiStarZone"))
+            {
+                isConnectedToAntiStarZones = true;
+
+                if (element.gameObject.GetComponent<AntiStarZoneScript>().StartsAsActive)
+                {
+                    antiStarZonesStartAsActive = true;
+                }
+
+                break; //for the purposes of SFX we only care about the first lamp, so we break the loop here
+            }
+        }
+        
+        //WALLS
+        isConnectedToWalls = false;
+
+        foreach (GameObject element in puzzleElements)
+        {
+            if (element.gameObject.CompareTag("Wall"))
+            {
+                isConnectedToWalls = true;
+                break; //for the purposes of SFX we only care about the first lamp, so we break the loop here
+            }
+        }
+
+        if (isConnectedToWalls)
+        {
+            wallMoveSFXInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.WallMoveSFX);
+        }
     }
 
     private void PlayActivationSFX()
@@ -328,6 +369,23 @@ public class ButtonScript : MonoBehaviour, IInteractable
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOnSFX);
             }
         }
+        
+        if (isConnectedToAntiStarZones)
+        {
+            if (antiStarZonesStartAsActive)
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.AntiStarZoneOffSFX);
+            }
+            else
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.AntiStarZoneOnSFX);
+            }
+        }
+
+        if (isConnectedToWalls)
+        {
+            wallMoveSFXInstance.start();
+        }
     }
     
     private void PlayDeactivationSFX()
@@ -354,6 +412,23 @@ public class ButtonScript : MonoBehaviour, IInteractable
             {
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOffSFX);
             }
+        }
+
+        if (isConnectedToAntiStarZones)
+        {
+            if (antiStarZonesStartAsActive)
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.AntiStarZoneOnSFX);
+            }
+            else
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.AntiStarZoneOffSFX);
+            }
+        }
+
+        if (isConnectedToWalls)
+        {
+            wallMoveSFXInstance.start();
         }
     }
 }

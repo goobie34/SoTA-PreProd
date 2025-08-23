@@ -10,6 +10,8 @@ public class WallScript : MonoBehaviour, IActivatable
 {
     Vector3 defaultPosition;    //position when NOT activated
     Vector3 activatedPosition;  //position activated (is fetched from a child object)
+
+    public float DistanceToTravel { get; private set; } //set in start
     
     bool isActive = false;
 
@@ -28,6 +30,8 @@ public class WallScript : MonoBehaviour, IActivatable
         {
             activatedPosition = activatedTransform.position;
         }
+
+        DistanceToTravel = Vector3.Distance(defaultPosition, activatedPosition);
     }
 
     public void Activate()
