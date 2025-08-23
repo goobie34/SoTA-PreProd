@@ -203,4 +203,14 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    public void PlayUIHoverSFX()
+    {
+        PlayOneShot(FMODEvents.Instance.UIButtonHoverSFX);
+    }
+
+    public void PlayUIClickSFX()
+    {
+        PlayOneShot(FMODEvents.Instance.UIButtonClickSFX);
+    }
 }

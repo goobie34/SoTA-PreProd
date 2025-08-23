@@ -103,7 +103,7 @@ MonoBehaviour:
       Data3: 61188006
       Data4: 496474685
     Path: event:/SFX/Spikes/SpikesDisappearSFX
-  <UIButtonClick>k__BackingField:
+  <UIButtonClickSFX>k__BackingField:
     Guid:
       Data1: -1893756287
       Data2: 1341463142

@@ -10,7 +10,7 @@ public class FMODEvents : MonoBehaviour
 {
     [field: Header("UI SFX")]
     [field: SerializeField] public EventReference UIButtonHoverSFX { get; private set; }
-    [field: SerializeField] public EventReference UIButtonClick { get; private set; }
+    [field: SerializeField] public EventReference UIButtonClickSFX { get; private set; }
     
     [field: Header("Button SFX")]
     [field: SerializeField] public EventReference ButtonSFX { get; private set; }
