@@ -24,6 +24,9 @@ public class PressurePlateScript : MonoBehaviour
     //flags used for SFX so we only play spike sound effect (for example) once for all spikes being activated by this button
     private bool isConnectedToSpikes = false; //is set automatically in CheckConnectedPuzzleElements
     private bool spikesStartAsActive = false; //is set automatically in CheckConnectedPuzzleElements
+    private bool isConnectedToLamps = false; //is set automatically in CheckConnectedPuzzleElements
+    private bool lampsStartAsActive = false; //is set automatically in CheckConnectedPuzzleElements
+
     private void Start()
     {
         originalPosition = transform.position;
@@ -138,6 +141,7 @@ public class PressurePlateScript : MonoBehaviour
 
     private void CheckConnectedPuzzleElements() //Only to be used for SFX
     {
+        //SPIKES
         isConnectedToSpikes = false;
 
         foreach (GameObject element in puzzleElements)
@@ -152,6 +156,24 @@ public class PressurePlateScript : MonoBehaviour
                 }
 
                 break; //for the purposes of SFX we only care about the first spike, so we break the loop here
+            }
+        }
+
+        //LAMPS
+        isConnectedToLamps = false;
+
+        foreach (GameObject element in puzzleElements)
+        {
+            if (element.gameObject.CompareTag("Lamp"))
+            {
+                isConnectedToLamps = true;
+
+                if (element.gameObject.GetComponent<LampScript>().StartsAsActive)
+                {
+                    lampsStartAsActive = true;
+                }
+
+                break; //for the purposes of SFX we only care about the first lamp, so we break the loop here
             }
         }
     }
@@ -169,6 +191,18 @@ public class PressurePlateScript : MonoBehaviour
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.SpikesAppearSFX);
             }
         }
+
+        if (isConnectedToLamps)
+        {
+            if (lampsStartAsActive)
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOffSFX);
+            }
+            else
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOnSFX);
+            }
+        }
     }
 
     private void PlayDeactivationSFX()
@@ -182,6 +216,18 @@ public class PressurePlateScript : MonoBehaviour
             else
             {
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.SpikesDisappearSFX);
+            }
+        }
+
+        if (isConnectedToLamps)
+        {
+            if (lampsStartAsActive)
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOnSFX);
+            }
+            else
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOffSFX);
             }
         }
     }

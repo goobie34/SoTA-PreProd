@@ -61,6 +61,10 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Activatable SFX")]
     [field: SerializeField] public EventReference SpikesAppearSFX { get; private set; }
     [field: SerializeField] public EventReference SpikesDisappearSFX { get; private set; }
+    [field: SerializeField] public EventReference LampTurnOnSFX { get; private set; }
+    [field: SerializeField] public EventReference LampTurnOffSFX { get; private set; }
+
+
 
 
     public static FMODEvents Instance { get; private set; }

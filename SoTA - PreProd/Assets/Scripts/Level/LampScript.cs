@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor;
 /// <summary>
 /// Author:Karin
 /// 
@@ -10,6 +11,7 @@ public class LampScript : MonoBehaviour, IActivatable
 
 {
     [field: SerializeField] public bool IsLit { get; private set; } = false;
+    public bool StartsAsActive {get; private set; } //is used to determine which SFX should be played when lamp is activated with button
     
     private LightTracker tracker;
     private ParticleSystem lampParticles;
@@ -20,6 +22,8 @@ public class LampScript : MonoBehaviour, IActivatable
         tracker.RegisterLightSource(transform);
         lampParticles = GetComponentInChildren<ParticleSystem>();
         FindParticleColor();
+
+        StartsAsActive = IsLit;
     }
 
     public void Activate()
@@ -60,6 +64,23 @@ public class LampScript : MonoBehaviour, IActivatable
         } else if (IsLit)
         {
             TurnOffLamp();
+        }
+    }
+
+    public void Interact(bool byStarThrow)
+    {
+        if (byStarThrow)
+        {
+            if (!IsLit)
+            {
+                TurnOnLamp();
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOnSFX, Vector3.zero);
+            }
+            else if (IsLit)
+            {
+                TurnOffLamp();
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOffSFX, Vector3.zero);
+            }
         }
     }
 

@@ -257,7 +257,7 @@ public class
 
         if (collision.gameObject.tag == "Lamp" && isTraveling)
         {
-            collision.gameObject.GetComponent<LampScript>().Interact();
+            collision.gameObject.GetComponent<LampScript>().Interact(true);
             starThrowSFX.setParameterByNameWithLabel("StarThrowState", "Colliding_Interactable");
             StopTravelToDestination(true);
             return;

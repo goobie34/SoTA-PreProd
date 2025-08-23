@@ -27,6 +27,8 @@ public class ButtonScript : MonoBehaviour, IInteractable
     //flags used for SFX so we only play spike sound effect (for example) once for all spikes being activated by this button
     private bool isConnectedToSpikes = false; //is set automatically in CheckConnectedPuzzleElements
     private bool spikesStartAsActive = false; //is set automatically in CheckConnectedPuzzleElements
+    private bool isConnectedToLamps = false; //is set automatically in CheckConnectedPuzzleElements
+    private bool lampsStartAsActive = false; //is set automatically in CheckConnectedPuzzleElements
 
     public bool IsActive { get { return isPushed; } }
 
@@ -264,6 +266,7 @@ public class ButtonScript : MonoBehaviour, IInteractable
 
     private void CheckConnectedPuzzleElements() //Only to be used for SFX
     {
+        //SPIKES
         isConnectedToSpikes = false;
 
         foreach(GameObject element in puzzleElements)
@@ -278,6 +281,24 @@ public class ButtonScript : MonoBehaviour, IInteractable
                 }
 
                 break; //for the purposes of SFX we only care about the first spike, so we break the loop here
+            }
+        }
+        
+        //LAMPS
+        isConnectedToLamps = false;
+
+        foreach(GameObject element in puzzleElements)
+        {
+            if (element.gameObject.CompareTag("Lamp"))
+            {
+                isConnectedToLamps = true;
+
+                if(element.gameObject.GetComponent<LampScript>().StartsAsActive)
+                {
+                    lampsStartAsActive = true;
+                }
+
+                break; //for the purposes of SFX we only care about the first lamp, so we break the loop here
             }
         }
     }
@@ -295,6 +316,18 @@ public class ButtonScript : MonoBehaviour, IInteractable
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.SpikesAppearSFX);
             }
         }
+        
+        if (isConnectedToLamps)
+        {
+            if (lampsStartAsActive)
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOffSFX);
+            }
+            else
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOnSFX);
+            }
+        }
     }
     
     private void PlayDeactivationSFX()
@@ -308,6 +341,18 @@ public class ButtonScript : MonoBehaviour, IInteractable
             else
             {
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.SpikesDisappearSFX);
+            }
+        }
+
+        if (isConnectedToLamps)
+        {
+            if (lampsStartAsActive)
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOnSFX);
+            }
+            else
+            {
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LampTurnOffSFX);
             }
         }
     }

@@ -320,3 +320,17 @@ MonoBehaviour:
       Data3: 61188006
       Data4: 496474685
     Path: event:/SFX/Spikes/SpikesDisappearSFX
+  <LampTurnOnSFX>k__BackingField:
+    Guid:
+      Data1: -1893756287
+      Data2: 1341463142
+      Data3: 1950096294
+      Data4: -795944154
+    Path: event:/SFX/Spikes/SpikesAppearSFX
+  <LampTurnOffSFX>k__BackingField:
+    Guid:
+      Data1: -582264135
+      Data2: 1336075317
+      Data3: 61188006
+      Data4: 496474685
+    Path: event:/SFX/Spikes/SpikesDisappearSFX
