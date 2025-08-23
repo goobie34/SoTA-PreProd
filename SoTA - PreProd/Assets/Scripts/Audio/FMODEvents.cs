@@ -8,14 +8,25 @@ using FMODUnity;
 /// </summary>
 public class FMODEvents : MonoBehaviour
 {
+    [field: Header("UI SFX")]
+    [field: SerializeField] public EventReference UIButtonHoverSFX { get; private set; }
+    [field: SerializeField] public EventReference UIButtonClick { get; private set; }
+    
     [field: Header("Button SFX")]
     [field: SerializeField] public EventReference ButtonSFX { get; private set; }
+
+    [field: Header("Lore Tile SFX")]
+    [field: SerializeField] public EventReference LoreTileOpenSFX { get; private set; }
+    [field: SerializeField] public EventReference LoreTileCloseSFX { get; private set; }
 
     [field: Header("Timer Ticking SFX")]
     [field: SerializeField] public EventReference TimerTickingSFX { get; private set; }
 
     [field: Header("Pressure Plate SFX")]
     [field: SerializeField] public EventReference PressurePlateSFX { get; private set; }
+    
+    [field: Header("Wall SFX")]
+    [field: SerializeField] public EventReference WallMoveSFX { get; private set; }
     
     [field: Header("Slither SFX")]
     [field: SerializeField] public EventReference SlitherSound { get; private set; }
@@ -63,9 +74,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference SpikesDisappearSFX { get; private set; }
     [field: SerializeField] public EventReference LampTurnOnSFX { get; private set; }
     [field: SerializeField] public EventReference LampTurnOffSFX { get; private set; }
-
-
-
+    [field: SerializeField] public EventReference AntiStarZoneOnSFX { get; private set; }
+    [field: SerializeField] public EventReference AntiStarZoneOffSFX { get; private set; }
 
     public static FMODEvents Instance { get; private set; }
 

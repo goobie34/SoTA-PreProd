@@ -104,7 +104,7 @@ public class DialogueManager : MonoBehaviour
         GameObject.FindWithTag("Player").GetComponent<PlayerInput>().enabled = true;
         dialogueBox.SetActive(false);
         inADialogue = false;
-
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LoreTileCloseSFX, Vector3.zero);
         //To stop player dying while reading lore tile
         playerHealth.ResumeHealthDrain();
     }
@@ -126,6 +126,7 @@ public class DialogueManager : MonoBehaviour
 
         GameObject.FindWithTag("Player").GetComponent<PlayerInput>().enabled = false;
         dialogueBox.SetActive(true);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.LoreTileOpenSFX, Vector3.zero);
         inADialogue = true;
         dialogueQueue.Clear();
         

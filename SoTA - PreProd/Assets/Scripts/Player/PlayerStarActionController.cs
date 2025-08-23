@@ -300,10 +300,13 @@ public class PlayerStarActionController : MonoBehaviour
 
             if (strongThrow)
             {
+                //this code is never triggered
                 AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StrongThrowAttackSFX);
+                Debug.Log("StrongThrow SFX");
             } else
             {
-                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarThrowAttackSFX); 
+                AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StarThrowAttackSFX);
+                Debug.Log("NormalThrow SFX");
             }
         }
     }
@@ -404,6 +407,9 @@ public class PlayerStarActionController : MonoBehaviour
             throwTargetDestination = transform.position + throwDirection;
 
             starActions.Throw(throwTargetDestination, throwDirection.normalized);
+
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.StrongThrowAttackSFX);
+            Debug.Log("StrongThrow SFX");
         }
     }
 

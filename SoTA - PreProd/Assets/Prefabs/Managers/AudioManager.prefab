@@ -96,6 +96,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d7183d85edb72845a4328d02f172d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <UIButtonHoverSFX>k__BackingField:
+    Guid:
+      Data1: -582264135
+      Data2: 1336075317
+      Data3: 61188006
+      Data4: 496474685
+    Path: event:/SFX/Spikes/SpikesDisappearSFX
+  <UIButtonClick>k__BackingField:
+    Guid:
+      Data1: -1893756287
+      Data2: 1341463142
+      Data3: 1950096294
+      Data4: -795944154
+    Path: event:/SFX/Spikes/SpikesAppearSFX
   <ButtonSFX>k__BackingField:
     Guid:
       Data1: 1523794293
@@ -103,6 +117,20 @@ MonoBehaviour:
       Data3: -486885958
       Data4: 1012051852
     Path: event:/SFX/ButtonSFX
+  <LoreTileOpenSFX>k__BackingField:
+    Guid:
+      Data1: -1893756287
+      Data2: 1341463142
+      Data3: 1950096294
+      Data4: -795944154
+    Path: event:/SFX/Spikes/SpikesAppearSFX
+  <LoreTileCloseSFX>k__BackingField:
+    Guid:
+      Data1: -582264135
+      Data2: 1336075317
+      Data3: 61188006
+      Data4: 496474685
+    Path: event:/SFX/Spikes/SpikesDisappearSFX
   <TimerTickingSFX>k__BackingField:
     Guid:
       Data1: -2072432112
@@ -117,6 +145,13 @@ MonoBehaviour:
       Data3: -1399288440
       Data4: 1154796700
     Path: event:/SFX/PressurePlateSFX
+  <WallMoveSFX>k__BackingField:
+    Guid:
+      Data1: -2072432112
+      Data2: 1197504309
+      Data3: 2145628607
+      Data4: -56747037
+    Path: event:/SFX/TimerTicking
   <SlitherSound>k__BackingField:
     Guid:
       Data1: 105197990
@@ -328,6 +363,20 @@ MonoBehaviour:
       Data4: -795944154
     Path: event:/SFX/Spikes/SpikesAppearSFX
   <LampTurnOffSFX>k__BackingField:
+    Guid:
+      Data1: -582264135
+      Data2: 1336075317
+      Data3: 61188006
+      Data4: 496474685
+    Path: event:/SFX/Spikes/SpikesDisappearSFX
+  <AntiStarZoneOnSFX>k__BackingField:
+    Guid:
+      Data1: -1893756287
+      Data2: 1341463142
+      Data3: 1950096294
+      Data4: -795944154
+    Path: event:/SFX/Spikes/SpikesAppearSFX
+  <AntiStarZoneOffSFX>k__BackingField:
     Guid:
       Data1: -582264135
       Data2: 1336075317
